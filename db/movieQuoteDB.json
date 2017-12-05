@@ -1,0 +1,258 @@
+{
+    "movieQuotes": {
+        "movieQuote0": {
+            "quote": "Frankly, my dear, I don't give a damn.",
+            "character": "Rhett Butler",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie0"
+        },
+        "movieQuote1": {
+            "quote": "You talking to me?",
+            "character": "Travis Bickle",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie1"
+        },
+        "movieQuote2": {
+            "quote": "You're gonna need a bigger boat.",
+            "character": "Chief Martin Brody",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie2"
+        },
+        "movieQuote3": {
+            "quote": "No. I am your father.",
+            "character": "Darth Vader",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie3"
+        },
+        "movieQuote4": {
+            "quote": "Zed's dead, baby. Zed's dead.",
+            "character": "Butch Coolidge",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie4"
+        },
+        "movieQuote5": {
+            "quote": "Hold on to your butts.",
+            "character": "Ray Arnold",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie5"
+        },
+        "movieQuote6": {
+            "quote": "You're my boy Blue!",
+            "character": "Frank",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie6"
+        },
+        "movieQuote7": {
+            "quote": "She doesn't even go here.",
+            "character": "Damian",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie7"
+        },
+        "movieQuote8": {
+            "quote": "The things you own end up owning you.",
+            "character": "Tyler Durden",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie8"
+        },
+        "movieQuote9": {
+            "quote": "Here's Johnny!",
+            "character": "Jack Torrance",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie9"
+        },
+        "movieQuote10": {
+            "quote": "I see dead people.",
+            "character": "Cole Sear",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie10"
+        },
+        "movieQuote11": {
+            "quote": "I'm not a smart man, but I know what love is.",
+            "character": "Forrest Gump",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie11"
+        },
+        "movieQuote12": {
+            "quote": "So long, partner.",
+            "character": "Woody",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie12"
+        },
+        "movieQuote13": {
+            "quote": "Hasta la vista, baby.",
+            "character": "The Terminator",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie13"
+        },
+        "movieQuote14": {
+            "quote": "I caught you a delicious bass.",
+            "character": "Napoleon Dynamite",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie14"
+        },
+        "movieQuote15": {
+            "quote": "It does not do to dwell on dreams and forget to live.",
+            "character": "Albus Dumbledore",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie15"
+        },
+        "movieQuote16": {
+            "quote": "Why so serious?",
+            "character": "The Joker",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie16"
+        },
+        "movieQuote17": {
+            "quote": "Say 'hello' to my little friend!",
+            "character": "Tony Montana",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie17"
+        },
+        "movieQuote18": {
+            "quote": "Language was invented for one reason, boys - to woo women - and, in that endeavor, laziness will not do.",
+            "character": "John Keating",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie18"
+        },
+        "movieQuote19": {
+            "quote": "When the mob and the press and the whole world tell you to move, your job is to plant yourself like a tree beside the river of truth, and tell the whole world - 'No, YOU move'.",
+            "character": "Sharon Carter",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie19"
+        },
+        "movieQuote20": {
+            "quote": "The Power of Christ compels you!",
+            "character": "Father Merrin, Father Karras",
+            "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
+            "movieId": "movie20"
+        }
+    },
+    "movies": {
+        "movie0": {
+            "releaseDate": 1939,
+            "title": "Gone with the Wind",
+            "poster_path": "4o1yeosjSFMaI9pe1rOkYcZ6hHO.jpg",
+            "movieDatabaseId": 770
+        },
+        "movie1": {
+            "releaseDate": 1976,
+            "title": "Taxi Driver",
+            "poster_path": "yxq4pk1xGmro8tQABuQIrWrvdaE.jpg",
+            "movieDatabaseId": 103
+        },
+        "movie2": {
+            "releaseDate": 1975,
+            "title": "Jaws",
+            "poster_path": "l1yltvzILaZcx2jYvc5sEMkM7Eh.jpg",
+            "movieDatabaseId": 578
+        },
+        "movie3": {
+            "releaseDate": 1980,
+            "title": "Star Wars: Episode V - The Empire Strikes Back",
+            "poster_path": "6u1fYtxG5eqjhtCPDx04pJphQRW.jpg",
+            "movieDatabaseId": 1891
+        },
+        "movie4": {
+            "releaseDate": 1994,
+            "title": "Pulp Fiction",
+            "poster_path": "dM2w364MScsjFf8pfMbaWUcWrR.jpg",
+            "movieDatabaseId": 680
+        },
+        "movie5": {
+            "releaseDate": 1993,
+            "title": "Jurassic Park",
+            "poster_path": "c414cDeQ9b6qLPLeKmiJuLDUREJ.jpg",
+            "movieDatabaseId": 329
+        },
+        "movie6": {
+            "releaseDate": 2003,
+            "title": "Old School",
+            "poster_path": "lvcyZumUoA6OBeqcJknfZVTmKKF.jpg",
+            "movieDatabaseId": 11635
+        },
+        "movie7": {
+            "releaseDate": 2004,
+            "title": "Mean Girls",
+            "poster_path": "lDlGPZS0UJYKxVlpyff3BMyPc2H.jpg",
+            "movieDatabaseId": 10625
+        },
+        "movie8": {
+            "releaseDate": 1999,
+            "title": "Fight Club",
+            "poster_path": "adw6Lq9FiC9zjYEpOqfq03ituwp.jpg",
+            "movieDatabaseId": 550
+        },
+        "movie9": {
+            "releaseDate": 1980,
+            "title": "The Shining",
+            "poster_path": "9fgh3Ns1iRzlQNYuJyK0ARQZU7w.jpg",
+            "movieDatabaseId": 694
+        },
+        "movie10": {
+            "releaseDate": 1999,
+            "title": "The Sixth Sense",
+            "poster_path": "imps263dHNe3SuoaAJORZyNTdDT.jpg",
+            "movieDatabaseId": 745
+        },
+        "movie11": {
+            "releaseDate": 1994,
+            "title": "Forrest Gump",
+            "poster_path": "yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg",
+            "movieDatabaseId": 13
+        },
+        "movie12": {
+            "releaseDate": 1994,
+            "title": "Toy Story 3",
+            "poster_path": "mMltbSxwEdNE4Cv8QYLpzkHWTDo.jpg",
+            "movieDatabaseId": 10193
+        },
+        "movie13": {
+            "releaseDate": 1991,
+            "title": "Terminator 2: Judgement Day",
+            "poster_path": "2y4dmgWYRMYXdD1UyJVcn2HSd1D.jpg",
+            "movieDatabaseId": 280
+        },
+        "movie14": {
+            "releaseDate": 2004,
+            "title": "Napoleon Dynamite",
+            "poster_path": "2y4dmgWYRMYXdD1UyJVcn2HSd1D.jpg",
+            "movieDatabaseId": 8193
+        },
+        "movie15": {
+            "releaseDate": 2001,
+            "title": "Harry Potter and the Sorcerer's Stone",
+            "poster_path": "dCtFvscYcXQKTNvyyaQr2g2UacJ.jpg",
+            "movieDatabaseId": 671
+        },
+        "movie16": {
+            "releaseDate": 2008,
+            "title": "The Dark Knight",
+            "poster_path": "1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg",
+            "movieDatabaseId": 155
+        },
+        "movie17": {
+            "releaseDate": 1983,
+            "title": "Scarface",
+            "poster_path": "zr2p353wrd6j3wjLgDT4TcaestB.jpg",
+            "movieDatabaseId": 111
+        },
+        "movie18": {
+            "releaseDate": 1989,
+            "title": "Dead Poets Society",
+            "poster_path": "3Ri2GReavqSHqWemlP6HYn8i2P9.jpg",
+            "movieDatabaseId": 207
+        },
+        "movie19": {
+            "releaseDate": 2016,
+            "title": "Captain America: Civil War",
+            "poster_path": "kSBXou5Ac7vEqKd97wotJumyJvU.jpg",
+            "movieDatabaseId": 271110
+        },
+        "movie20": {
+            "releaseDate": 1973,
+            "title": "The Exorcist",
+            "poster_path": "mBLSuXTAJExUFdqYFgZro7Y9ZDG.jpg",
+            "movieDatabaseId": 9552
+        }
+    }
+}
