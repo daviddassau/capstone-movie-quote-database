@@ -2,16 +2,16 @@
     <div>
         <h1 class="text-center">Quote of The Day</h1>
     </div>
-    <div class="row">
+    <div class="row" ng-repeat="movieQuote in movieQuotes">
         <div class="col-md-4">
             <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg" alt="">
         </div>
         <div class="col-md-8">
-            <h2>Pulp Fiction</h2>
-            <p>1994</p>
+            <h2>{{movie.title}}</h2>
+            <p>{{movie.releaseDate}}</p>
             <div class="quote-body">
-                <p>"Zed's dead, baby. Zed's dead."</p>
-                <p>- Butch Coolidge</p>
+                <p>{{movieQuote.quote}}</p>
+                <p>- {{movieQuote.character}}</p>
             </div>
         </div>
     </div>
