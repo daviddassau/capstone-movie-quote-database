@@ -2,15 +2,15 @@
 
 app.controller("HomeCtrl", function ($rootScope, $scope, MovieQuoteService, MovieService) {
     
-    const getMovieQuotes = () => {
-        MovieQuoteService.getMovieQuoteFromDB($rootScope.uid).then((results) => {
-            $scope.movieQuote = results;
+    const getMovieQuote = () => {
+        MovieQuoteService.getMovieQuoteFromDB().then((result) => {
+            $scope.movieQuote = result;
         }).catch((error) => {
             console.log("error in getMovieQuotes", error);
         });
     };
 
-    getMovieQuotes();
+    getMovieQuote();
 
     const getMovie = () => {
         MovieService.getMovieFromDB($rootScope.uid).then((results) => {

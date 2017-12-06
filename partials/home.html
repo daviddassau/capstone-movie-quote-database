@@ -2,15 +2,15 @@
     <div>
         <h1 class="text-center">Quote of The Day</h1>
     </div>
-    <div class="row" ng-repeat="movieQuote in movieQuotes">
+    <div class="row">
         <div class="col-md-4">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg" alt="">
+            <!-- <img class="poster_path" ng-src="{{image_url}}/w342/{{movie.poster_path}}" alt=""> -->
         </div>
         <div class="col-md-8">
-            <h2>{{movie.title}}</h2>
-            <p>{{movie.releaseDate}}</p>
+            <!-- <h2>{{movie.title}}</h2>
+            <p>{{movie.releaseDate}}</p> -->
             <div class="quote-body">
-                <p>{{movieQuote.quote}}</p>
+                <p>"{{movieQuote.quote}}"</p>
                 <p>- {{movieQuote.character}}</p>
             </div>
         </div>
