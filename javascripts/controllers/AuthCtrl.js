@@ -3,9 +3,9 @@
 app.controller("AuthCtrl", function ($location, $scope, $rootScope, AuthService) {
     $scope.authenticate = () => {
         AuthService.authenticateGoogle().then((result) => {
-            $rootScope.uid = result.user.uid;
+            $rootScope.navbar = true;
             $scope.$apply(() => {
-                $location.url("/home");
+                $location.path("/home");
             });
         }).catch((err) => {
             console.log("error in authenticateGoogle", err);
