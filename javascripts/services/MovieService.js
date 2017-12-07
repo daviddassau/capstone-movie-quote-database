@@ -2,15 +2,12 @@
 
 app.service("MovieService", function($http, $q, FIREBASE_CONFIG){
 
-    const getMovieFromDB = (userUid) => {
+    const getMovieFromDB = (movieId) => {
         let movie = [];
         return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/movies.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/movies.json?orderBy="$key"&equalTo="${movieId}"`).then((results) => {
                 let fbMovie = results.data;
-                Object.keys(fbMovie).forEach((key) => {
-                    fbMovie[key].id = key;
-                    movie.push(fbMovie[key]);
-                });
+                movie.push(fbMovie[movieId]);
                 resolve(movie);
             }).catch((error) => {
                 reject(error);

@@ -4,4 +4,21 @@
         <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1"></span>
         <input ng-keypress="enterPush($event)" type="text" class="form-control" placeholder="Type in the movie quote you're looking for" aria-describedby="basic-addon1">
     </div>
+
+    <div id="movies">
+        <div class="row" ng-repeat="movie in movies">
+            <div class="col-md-4">
+                <img class="poster_path" ng-src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" alt="">
+            </div>
+            <div class="col-md-8">
+                <h2>{{movie.title}}</h2>
+                <p>{{movie.releaseDate}}</p>
+                <div class="quote-body">
+                    <p>"{{movie.quote}}"</p>
+                    <p>- {{movie.character}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
