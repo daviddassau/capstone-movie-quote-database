@@ -5,6 +5,7 @@ app.controller("HomeCtrl", function ($rootScope, $scope, MovieQuoteService, Movi
     const getMovieQuote = () => {
         MovieQuoteService.getMovieQuoteFromDB().then((result) => {
             $scope.movieQuote = result;
+            getMovie($scope.movieQuote.movieId);
         }).catch((error) => {
             console.log("error in getMovieQuotes", error);
         });
@@ -12,14 +13,14 @@ app.controller("HomeCtrl", function ($rootScope, $scope, MovieQuoteService, Movi
 
     getMovieQuote();
 
-    const getMovie = () => {
-        MovieService.getMovieFromDB($rootScope.uid).then((results) => {
-            $scope.movie = results;
+    const getMovie = (movieId) => {
+        MovieService.getMovieFromDB(movieId).then((results) => {
+            $scope.movie = results[0];
         }).catch((error) => {
             console.log("error in getMovie", error);
         });
     };
 
-    getMovie();
+    
 
 });
