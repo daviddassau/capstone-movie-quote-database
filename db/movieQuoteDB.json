@@ -4,127 +4,148 @@
             "quote": "Frankly, my dear, I don't give a damn.",
             "character": "Rhett Butler",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie0"
+            "movieId": "movie0",
+            "isFavorited": false
         },
         "movieQuote1": {
             "quote": "You talking to me?",
             "character": "Travis Bickle",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie1"
+            "movieId": "movie1",
+            "isFavorited": false
         },
         "movieQuote2": {
             "quote": "You're gonna need a bigger boat.",
             "character": "Chief Martin Brody",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie2"
+            "movieId": "movie2",
+            "isFavorited": false
         },
         "movieQuote3": {
             "quote": "No. I am your father.",
             "character": "Darth Vader",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie3"
+            "movieId": "movie3",
+            "isFavorited": false
         },
         "movieQuote4": {
             "quote": "Zed's dead, baby. Zed's dead.",
             "character": "Butch Coolidge",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie4"
+            "movieId": "movie4",
+            "isFavorited": false
         },
         "movieQuote5": {
             "quote": "Hold on to your butts.",
             "character": "Ray Arnold",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie5"
+            "movieId": "movie5",
+            "isFavorited": false
         },
         "movieQuote6": {
             "quote": "You're my boy Blue!",
             "character": "Frank",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie6"
+            "movieId": "movie6",
+            "isFavorited": false
         },
         "movieQuote7": {
             "quote": "She doesn't even go here.",
             "character": "Damian",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie7"
+            "movieId": "movie7",
+            "isFavorited": false
         },
         "movieQuote8": {
             "quote": "The things you own end up owning you.",
             "character": "Tyler Durden",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie8"
+            "movieId": "movie8",
+            "isFavorited": false
         },
         "movieQuote9": {
             "quote": "Here's Johnny!",
             "character": "Jack Torrance",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie9"
+            "movieId": "movie9",
+            "isFavorited": false
         },
         "movieQuote10": {
             "quote": "I see dead people.",
             "character": "Cole Sear",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie10"
+            "movieId": "movie10",
+            "isFavorited": false
         },
         "movieQuote11": {
             "quote": "I'm not a smart man, but I know what love is.",
             "character": "Forrest Gump",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie11"
+            "movieId": "movie11",
+            "isFavorited": false
         },
         "movieQuote12": {
             "quote": "So long, partner.",
             "character": "Woody",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie12"
+            "movieId": "movie12",
+            "isFavorited": false
         },
         "movieQuote13": {
             "quote": "Hasta la vista, baby.",
             "character": "The Terminator",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie13"
+            "movieId": "movie13",
+            "isFavorited": false
         },
         "movieQuote14": {
             "quote": "I caught you a delicious bass.",
             "character": "Napoleon Dynamite",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie14"
+            "movieId": "movie14",
+            "isFavorited": false
         },
         "movieQuote15": {
             "quote": "It does not do to dwell on dreams and forget to live.",
             "character": "Albus Dumbledore",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie15"
+            "movieId": "movie15",
+            "isFavorited": false
         },
         "movieQuote16": {
             "quote": "Why so serious?",
             "character": "The Joker",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie16"
+            "movieId": "movie16",
+            "isFavorited": false
         },
         "movieQuote17": {
             "quote": "Say 'hello' to my little friend!",
             "character": "Tony Montana",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie17"
+            "movieId": "movie17",
+            "isFavorited": false
         },
         "movieQuote18": {
             "quote": "Language was invented for one reason, boys - to woo women - and, in that endeavor, laziness will not do.",
             "character": "John Keating",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie18"
+            "movieId": "movie18",
+            "isFavorited": false
         },
         "movieQuote19": {
             "quote": "When the mob and the press and the whole world tell you to move, your job is to plant yourself like a tree beside the river of truth, and tell the whole world - 'No, YOU move'.",
             "character": "Sharon Carter",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie19"
+            "movieId": "movie19",
+            "isFavorited": false
         },
         "movieQuote20": {
             "quote": "The Power of Christ compels you!",
             "character": "Father Merrin, Father Karras",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
-            "movieId": "movie20"
+            "movieId": "movie20",
+            "isFavorited": false
         }
     },
     "movies": {
