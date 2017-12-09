@@ -37,19 +37,20 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         });
     };
 
-    // const updateMovieQuote = (quote, movieId) => {
-    //     return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieId}.json`, JSON.stringify(quote));
-    // };
+    const updateMovieQuote = (quote, movieId) => {
+        return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieId}.json`, JSON.stringify(quote));
+    };
 
-    // const createMovieQuoteObject = (quote) => {
-    //     return {
-    //         "quote": quote.quote,
-    //         "character": quote.character,
-    //         "uid": quote.uid,
-    //         "movieId": quote.movieId
-    //     };
-    // };
+    const createMovieQuoteObject = (quote) => {
+        return {
+            "quote": quote.quote,
+            "character": quote.character,
+            "uid": quote.uid,
+            "movieId": quote.movieId,
+            "isFavorited": true
+        };
+    };
 
-    return {getMovieQuoteFromDB, searchMovieQuotes};
+    return {getMovieQuoteFromDB, searchMovieQuotes, updateMovieQuote, createMovieQuoteObject};
 
 });

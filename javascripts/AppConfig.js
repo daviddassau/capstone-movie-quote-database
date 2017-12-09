@@ -38,9 +38,9 @@ app.run(function ($location, $rootScope, FIREBASE_CONFIG, AuthService) {
             //if on /auth page AND not logged in, no redirect only authentiate in navbar
             $rootScope.navbar = false;
         } else if (appTo && logged) {
-            //if on /auth page AND logged in, redirect to search page
+            //if on /auth page AND logged in, redirect to home page
             $rootScope.navbar = true;
-            $location.path('/search');
+            $location.path('/home');
         } else if (!appTo && logged) {
             //if not on /auth page AND logged in see other navbar
             $rootScope.navbar = true;
