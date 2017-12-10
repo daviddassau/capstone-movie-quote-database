@@ -8,29 +8,13 @@
     </div>
 
     <div id="movies">
-        <div class="row" ng-repeat="movie in movies">
-            <div class="col-md-4">
-                <img class="poster_path" ng-src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" width="250px" alt="">
-            </div>
-            <div class="col-md-8">
-                <h2>{{movie.title}}</h2>
-                <p>{{movie.releaseDate}}</p>
-                <div class="quote-body">
-                    <p>"{{movie.quote}}"</p>
-                    <p>- {{movie.character}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="movies">
         <div ng-repeat="movie in movies" class="col-sm-6 col-md-4 movie">
             <div class="thumbnail">
                 <img class="poster_path" ng-src="{{image_url}}/w342/{{movie.poster_path}}" alt="">
                 <div class="caption">
                     <h3 class="title">{{movie.title}}</h3>
                     <p>
-                        <a class="btn btn-primary review" role="button" ng-click="addQuote(movie)">Add Quote</a>
+                        <button class="btn btn-primary add-quote" ng-click="addQuote(movie)"><i class="fa fa-plus"></i> Add Quote</button>
                     </p>
                 </div>
             </div>
