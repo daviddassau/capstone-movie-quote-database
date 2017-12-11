@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("SubmitCtrl", function ($scope, tmdbService) {
+app.controller("SubmitCtrl", function ($location, $scope, tmdbService, MovieService) {
 
     $scope.movies = [];
 
@@ -13,5 +13,21 @@ app.controller("SubmitCtrl", function ($scope, tmdbService) {
             });
         }
     };
+
+    $scope.addQuote = (movie) => {
+        MovieService.getMovieByMovieDbIdFromDB(movie.id).then((result) => {
+            if (result.length > 0) {
+                $location.path(`/addQuote`);
+            }
+            else{
+                MovieService.setAddedMovie(movie);
+                $location.path(`/addQuote`);
+            }
+        }).catch((error) => {
+            console.log("error in addQuote", error);
+        });
+    };
+
+
 
 });
