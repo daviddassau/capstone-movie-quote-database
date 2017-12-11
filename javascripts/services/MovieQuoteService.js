@@ -19,6 +19,20 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         });
     };
 
+    const getAllMovieQuotes = () => {
+        let movieQuote = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`).then((results) => {
+                $.each(results.data, function(idx, mvieQte){
+                    movieQuote.push(mvieQte);
+                });
+                resolve(movieQuote);
+            }).catch((error) => {
+                reject(error);
+            });
+        });
+    };
+
     // Try it out
     const getMovieQuoteForSaved = (uid) => {
         let savedMovieQuote = [];
@@ -74,6 +88,12 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         };
     };
 
-    return { getMovieQuoteFromDB, searchMovieQuotes, updateMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved};
+
+    const addNewMovieQuote = (movieQuote, movieQuoteCnt) => {
+        movieQuoteCnt = movieQuoteCnt + 1;
+        return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/movieQuote${movieQuoteCnt}.json`, JSON.stringify(movieQuote));
+    };
+
+    return { getMovieQuoteFromDB, searchMovieQuotes, updateMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes};
 
 });
