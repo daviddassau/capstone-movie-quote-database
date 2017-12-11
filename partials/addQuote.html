@@ -1,0 +1,15 @@
+<div id="addQuote">
+    <h1 class="text-center">Submit a Quote</h1>
+    <h4 class="text-center">Step 2: Add Your Quote</h4>
+
+    <form name="newMovieQuoteForm" ng-submit="submitForm()" class="col-xs-4 col-xs-offset-4">
+        <div class="form-group">
+            <input type="text" class="form-control" id="movieQuote" placeholder="Movie Quote" ng-required="true" ng-model="movieQuotes.quote">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="character" placeholder="Character who said it" ng-required="true" ng-model="movieQuotes.character">
+        </div>
+        <button type="submit" class="btn btn-default" ng-disabled="newMovieQuoteForm.$invalid" ng-click="saveMovieQuote(user)">Submit</button>
+    </form>
+
+</div>
