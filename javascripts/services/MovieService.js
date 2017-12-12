@@ -56,7 +56,6 @@ app.service("MovieService", function($http, $q, FIREBASE_CONFIG){
     const addNewMovie = (movie) => {
         return $q((resolve, reject) => {
             $http.post(`${FIREBASE_CONFIG.databaseURL}/movies.json`, JSON.stringify(movie)).then((result) => {
-                console.log("result from addNewMovie", result);
                 movie.id = result.data.name;
                 addedMovie = movie;
                 resolve(movie);

@@ -27,9 +27,6 @@ app.controller("SubmitCtrl", function ($location, $scope, tmdbService, MovieServ
                 }).catch((error) => {
                     console.log("error in addQuote", error);
                 });
-                // console.log("movie from API", movie);
-                // console.log("call from createMovieObject", MovieService.createMovieObject(movie));
-                
             }
         }).catch((error) => {
             console.log("error in addQuote", error);
