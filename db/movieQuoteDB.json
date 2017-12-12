@@ -1,69 +1,69 @@
 {
     "movieQuotes": {
-        "movieQuote0": {
+        "movieQuote00": {
             "quote": "Frankly, my dear, I don't give a damn.",
             "character": "Rhett Butler",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie0",
             "isFavorited": false
         },
-        "movieQuote1": {
+        "movieQuote01": {
             "quote": "You talking to me?",
             "character": "Travis Bickle",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie1",
             "isFavorited": false
         },
-        "movieQuote2": {
+        "movieQuote02": {
             "quote": "You're gonna need a bigger boat.",
             "character": "Chief Martin Brody",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie2",
             "isFavorited": false
         },
-        "movieQuote3": {
+        "movieQuote03": {
             "quote": "No. I am your father.",
             "character": "Darth Vader",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie3",
             "isFavorited": false
         },
-        "movieQuote4": {
+        "movieQuote04": {
             "quote": "Zed's dead, baby. Zed's dead.",
             "character": "Butch Coolidge",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie4",
             "isFavorited": false
         },
-        "movieQuote5": {
+        "movieQuote05": {
             "quote": "Hold on to your butts.",
             "character": "Ray Arnold",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie5",
             "isFavorited": false
         },
-        "movieQuote6": {
+        "movieQuote06": {
             "quote": "You're my boy Blue!",
             "character": "Frank",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie6",
             "isFavorited": false
         },
-        "movieQuote7": {
+        "movieQuote07": {
             "quote": "She doesn't even go here.",
             "character": "Damian",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie7",
             "isFavorited": false
         },
-        "movieQuote8": {
+        "movieQuote08": {
             "quote": "The things you own end up owning you.",
             "character": "Tyler Durden",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
             "movieId": "movie8",
             "isFavorited": false
         },
-        "movieQuote9": {
+        "movieQuote09": {
             "quote": "Here's Johnny!",
             "character": "Jack Torrance",
             "uid": "ZLnlsPGVgIcPAPiNpcvzPU66Uhp1",
@@ -149,61 +149,61 @@
         }
     },
     "movies": {
-        "movie0": {
+        "movie00": {
             "releaseDate": 1939,
             "title": "Gone with the Wind",
             "poster_path": "4o1yeosjSFMaI9pe1rOkYcZ6hHO.jpg",
             "movieDatabaseId": 770
         },
-        "movie1": {
+        "movie01": {
             "releaseDate": 1976,
             "title": "Taxi Driver",
             "poster_path": "yxq4pk1xGmro8tQABuQIrWrvdaE.jpg",
             "movieDatabaseId": 103
         },
-        "movie2": {
+        "movie02": {
             "releaseDate": 1975,
             "title": "Jaws",
             "poster_path": "l1yltvzILaZcx2jYvc5sEMkM7Eh.jpg",
             "movieDatabaseId": 578
         },
-        "movie3": {
+        "movie03": {
             "releaseDate": 1980,
             "title": "Star Wars: Episode V - The Empire Strikes Back",
             "poster_path": "6u1fYtxG5eqjhtCPDx04pJphQRW.jpg",
             "movieDatabaseId": 1891
         },
-        "movie4": {
+        "movie04": {
             "releaseDate": 1994,
             "title": "Pulp Fiction",
             "poster_path": "dM2w364MScsjFf8pfMbaWUcWrR.jpg",
             "movieDatabaseId": 680
         },
-        "movie5": {
+        "movie05": {
             "releaseDate": 1993,
             "title": "Jurassic Park",
             "poster_path": "c414cDeQ9b6qLPLeKmiJuLDUREJ.jpg",
             "movieDatabaseId": 329
         },
-        "movie6": {
+        "movie06": {
             "releaseDate": 2003,
             "title": "Old School",
             "poster_path": "lvcyZumUoA6OBeqcJknfZVTmKKF.jpg",
             "movieDatabaseId": 11635
         },
-        "movie7": {
+        "movie07": {
             "releaseDate": 2004,
             "title": "Mean Girls",
             "poster_path": "lDlGPZS0UJYKxVlpyff3BMyPc2H.jpg",
             "movieDatabaseId": 10625
         },
-        "movie8": {
+        "movie08": {
             "releaseDate": 1999,
             "title": "Fight Club",
             "poster_path": "adw6Lq9FiC9zjYEpOqfq03ituwp.jpg",
             "movieDatabaseId": 550
         },
-        "movie9": {
+        "movie09": {
             "releaseDate": 1980,
             "title": "The Shining",
             "poster_path": "9fgh3Ns1iRzlQNYuJyK0ARQZU7w.jpg",
