@@ -41,10 +41,32 @@ app.service("MovieService", function($http, $q, FIREBASE_CONFIG){
     };
 
     let setAddedMovie = (movie) => {
-        console.log("movie", movie);
         addedMovie = movie;
     };
 
-    return { getMovieFromDB, getMovieByMovieDbIdFromDB, getAddedMovie, setAddedMovie};
+    const createMovieObject = (movie) => {
+        return {
+            "movieDatabaseId": movie.id,
+            "poster_path": movie.poster_path,
+            "releaseDate": movie.release_date,
+            "title": movie.original_title
+        };
+    };
+
+    const addNewMovie = (movie) => {
+        return $q((resolve, reject) => {
+            $http.post(`${FIREBASE_CONFIG.databaseURL}/movies.json`, JSON.stringify(movie)).then((result) => {
+                console.log("result from addNewMovie", result);
+                movie.id = result.data.name;
+                addedMovie = movie;
+                resolve(movie);
+            }).catch((error) => {
+                console.log("error in addNewMovie", error);
+                reject(error);
+            });
+        });
+    };
+
+    return {getMovieFromDB, getMovieByMovieDbIdFromDB, getAddedMovie, setAddedMovie, createMovieObject, addNewMovie};
 
 });

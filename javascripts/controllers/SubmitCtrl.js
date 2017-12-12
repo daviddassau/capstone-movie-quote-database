@@ -21,8 +21,15 @@ app.controller("SubmitCtrl", function ($location, $scope, tmdbService, MovieServ
                 $location.path(`/addQuote`);
             }
             else{
-                MovieService.setAddedMovie(movie);
-                $location.path(`/addQuote`);
+                let newMovie = MovieService.createMovieObject(movie);
+                MovieService.addNewMovie(newMovie).then(() => {
+                    $location.path(`/addQuote`);
+                }).catch((error) => {
+                    console.log("error in addQuote", error);
+                });
+                // console.log("movie from API", movie);
+                // console.log("call from createMovieObject", MovieService.createMovieObject(movie));
+                
             }
         }).catch((error) => {
             console.log("error in addQuote", error);

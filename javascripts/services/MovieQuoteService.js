@@ -88,10 +88,8 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         };
     };
 
-
-    const addNewMovieQuote = (movieQuote, movieQuoteCnt) => {
-        movieQuoteCnt = movieQuoteCnt + 1;
-        return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/movieQuote${movieQuoteCnt}.json`, JSON.stringify(movieQuote));
+    const addNewMovieQuote = (movieQuote) => {
+        return $http.post(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`, JSON.stringify(movieQuote));
     };
 
     return { getMovieQuoteFromDB, searchMovieQuotes, updateMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes};

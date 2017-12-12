@@ -23,7 +23,7 @@ app.controller("AddQuoteCtrl", function ($location, $scope, $routeParams, AuthSe
             newMovieQuote.quote = movie.quote;
             newMovieQuote.uid = AuthService.getCurrentUid();
 
-            MovieQuoteService.addNewMovieQuote(newMovieQuote, movieQuoteCnt).then(() => {
+            MovieQuoteService.addNewMovieQuote(newMovieQuote).then(() => {
                 $location.path(`/search`);
             }).catch((error) => {
                 console.log("error in submit", error);
