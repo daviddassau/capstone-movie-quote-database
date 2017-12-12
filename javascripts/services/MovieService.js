@@ -21,15 +21,14 @@ app.service("MovieService", function($http, $q, FIREBASE_CONFIG){
         let movie = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/movies.json`).then((results) => {
-                $.each(results.data, function(idx, mvie){
-                    if(mvie.movieDatabaseId == movieDatabaseId){
-                        movie.push(mvie);
-
-                        addedMovie = mvie;
+                let fbMovies = results.data;
+                Object.keys(fbMovies).forEach((key) => {
+                    if (fbMovies[key].movieDatabaseId === movieDatabaseId) {
+                        fbMovies[key].id = key;
+                        movie.push(fbMovies[key]);
+                        addedMovie = fbMovies[key];
                     }
                 });
-
-                
                 resolve(movie);
             }).catch((error) => {
                 reject(error);
@@ -45,6 +44,28 @@ app.service("MovieService", function($http, $q, FIREBASE_CONFIG){
         addedMovie = movie;
     };
 
-    return { getMovieFromDB, getMovieByMovieDbIdFromDB, getAddedMovie, setAddedMovie};
+    const createMovieObject = (movie) => {
+        return {
+            "movieDatabaseId": movie.id,
+            "poster_path": movie.poster_path,
+            "releaseDate": movie.release_date,
+            "title": movie.original_title
+        };
+    };
+
+    const addNewMovie = (movie) => {
+        return $q((resolve, reject) => {
+            $http.post(`${FIREBASE_CONFIG.databaseURL}/movies.json`, JSON.stringify(movie)).then((result) => {
+                movie.id = result.data.name;
+                addedMovie = movie;
+                resolve(movie);
+            }).catch((error) => {
+                console.log("error in addNewMovie", error);
+                reject(error);
+            });
+        });
+    };
+
+    return {getMovieFromDB, getMovieByMovieDbIdFromDB, getAddedMovie, setAddedMovie, createMovieObject, addNewMovie};
 
 });

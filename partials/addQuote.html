@@ -4,12 +4,12 @@
 
     <form name="newMovieQuoteForm" ng-submit="submitForm()" class="col-xs-4 col-xs-offset-4">
         <div class="form-group">
-            <input type="text" class="form-control" id="movieQuote" placeholder="Movie Quote" ng-required="true" ng-model="movieQuotes.quote">
+            <input type="text" class="form-control" id="movieQuote" placeholder="Movie Quote" ng-required="true" ng-model="movie.quote">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="character" placeholder="Character who said it" ng-required="true" ng-model="movieQuotes.character">
+            <input type="text" class="form-control" id="character" placeholder="Character who said it" ng-required="true" ng-model="movie.character">
         </div>
-        <button type="submit" class="btn btn-default" ng-disabled="newMovieQuoteForm.$invalid" ng-click="saveMovieQuote(user)">Submit</button>
+        <button type="submit" class="btn btn-default" ng-disabled="newMovieQuoteForm.$invalid" ng-click="saveMovieQuote(movie)">Submit</button>
     </form>
 
 </div>

@@ -16,12 +16,17 @@ app.controller("SubmitCtrl", function ($location, $scope, tmdbService, MovieServ
 
     $scope.addQuote = (movie) => {
         MovieService.getMovieByMovieDbIdFromDB(movie.id).then((result) => {
+            console.log("result", result);
             if (result.length > 0) {
                 $location.path(`/addQuote`);
             }
             else{
-                MovieService.setAddedMovie(movie);
-                $location.path(`/addQuote`);
+                let newMovie = MovieService.createMovieObject(movie);
+                MovieService.addNewMovie(newMovie).then(() => {
+                    $location.path(`/addQuote`);
+                }).catch((error) => {
+                    console.log("error in addQuote", error);
+                });
             }
         }).catch((error) => {
             console.log("error in addQuote", error);
