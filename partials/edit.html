@@ -1,14 +1,14 @@
 <div id="edit">
     <h1 class="text-center">Edit Quote</h1>
 
-    <form name="editMovieQuoteForm" ng-submit="submitForm()" class="col-xs-4 col-xs-offset-4">
+    <form name="editMovieQuoteForm" ng-submit="editMovieQuoteInFirebase(quote)" class="col-xs-4 col-xs-offset-4">
         <div class="form-group">
-            <input type="text" class="form-control" id="editMovieQuote" placeholder="" ng-required="true" ng-model="movie.quote">
+            <input type="text" class="form-control" id="editMovieQuote" ng-required="true" ng-model="movieQuote.quote">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="editCharacter" placeholder="" ng-required="true" ng-model="movie.character">
+            <input type="text" class="form-control" id="editCharacter" ng-required="true" ng-model="movieQuote.character">
         </div>
-        <button type="submit" class="btn btn-default" ng-disabled="editMovieQuoteForm.$invalid" ng-click="editMovieQuote(movie)">Submit</button>
+        <button type="submit" class="btn btn-default" ng-disabled="editMovieQuoteForm.$invalid" ng-click="editMovieQuote()">Submit</button>
     </form>
 
 </div>

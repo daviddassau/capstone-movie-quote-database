@@ -46,9 +46,7 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
                         savedMovieQuote.push(fbSavedMovieQuotes[key]);
                     }
                 });
-                console.log("savedMovieQuote", savedMovieQuote);
                 resolve(savedMovieQuote);
-                
             }).catch((error) => {
                 reject(error);
             });
@@ -74,8 +72,8 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         });
     };
 
-    const updateMovieQuote = (quote, movieId) => {
-        return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieId}.json`, JSON.stringify(quote));
+    const editMovieQuote = (quote, movieQuote) => {
+        return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieQuote}.json`, JSON.stringify(quote));
     };
 
     const createMovieQuoteObject = (movieQuote) => {
@@ -92,10 +90,23 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`, JSON.stringify(movieQuote));
     };
 
-    const getSingleMovieQuoteToEdit = (movieQuote) => {
-        return $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`, JSON.stringify(movieQuote));
+    const getSingleMovieQuoteToEdit = (movieId) => {
+        let singleMovieQuote = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json?orderBy="movieId"&equalTo="${movieId}"`).then((result) => {
+                let fbMovieQuote = result.data;
+                Object.keys(fbMovieQuote).forEach((key) => {
+                    fbMovieQuote[key].id = key;
+                    singleMovieQuote.push(fbMovieQuote[key]);
+                });
+                resolve(singleMovieQuote);
+            }).catch((error) => {
+
+            });
+        });
+
     };
 
-    return {getMovieQuoteFromDB, searchMovieQuotes, updateMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes, getSingleMovieQuoteToEdit};
+    return {getMovieQuoteFromDB, searchMovieQuotes, editMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes, getSingleMovieQuoteToEdit};
 
 });

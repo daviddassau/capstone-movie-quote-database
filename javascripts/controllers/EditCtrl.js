@@ -1,14 +1,25 @@
 "use strict";
 
-app.controller("EditCtrl", function ($scope, MovieQuoteService){
+app.controller("EditCtrl", function ($location, $routeParams, $scope, MovieQuoteService){
 
     $scope.movieQuote = {};
 
     const getMovieQuoteToEdit = () => {
-        MovieQuoteService.getSingleMovieQuoteToEdit().then((result) => {
-            console.log($scope.contact = result.data);
+        MovieQuoteService.getSingleMovieQuoteToEdit($routeParams.id).then((result) => {
+            $scope.movieQuote = result[0];
         }).catch((error) => {
             console.log("error in getMovieQuoteToEdit", error);
+        });
+    };
+
+    getMovieQuoteToEdit();
+
+    $scope.editMovieQuoteInFirebase = () => {
+        let updateMovieQuote = MovieQuoteService.createMovieQuoteObject($scope.movieQuote);
+        MovieQuoteService.editMovieQuote($scope.movieQuote, $scope.movieQuote.id).then(() => {
+            $location.path(`/search`);
+        }).catch((error) => {
+            console.log("error in updateMovieQuoteInFirebase", error);
         });
     };
 

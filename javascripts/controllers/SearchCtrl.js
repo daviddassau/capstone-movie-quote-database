@@ -19,12 +19,12 @@ app.controller("SearchCtrl", function ($location, $scope, MovieQuoteService, Mov
         $scope.movieIds = [];
         $scope.movies = [];
 
-        $.each(movies, function(idx, movie){
-            MovieService.getMovieFromDB(movie.movieId).then((results) => {
-                if (results.length > 0 && $.inArray($scope.movieIds, movie.movieId) == -1){
-                    $scope.movieIds.push(movie.movieId);
+        $.each(movies, function (idx, movieQuote){
+            MovieService.getMovieFromDB(movieQuote.movieId).then((results) => {
+                if (results.length > 0 && $.inArray($scope.movieIds, movieQuote.movieId) == -1){
+                    $scope.movieIds.push(movieQuote.movieId);
                     
-                    let aMovie = { quote: movie.quote, character: movie.character, title: results[0].title,
+                    let aMovie = { quote: movieQuote.quote, character: movieQuote.character, movieId: movieQuote.movieId, title: results[0].title,
                         poster_path: results[0].poster_path, releaseDate: results[0].releaseDate };
 
                     $scope.movies.push(aMovie);
@@ -35,8 +35,8 @@ app.controller("SearchCtrl", function ($location, $scope, MovieQuoteService, Mov
         });
     };
 
-    $scope.editMovieQuote = () => {
-        $location.path(`/edit`);
+    $scope.editMovieQuote = (movieId) => {
+        $location.path(`/edit/${movieId}`);
     };
 
 });
