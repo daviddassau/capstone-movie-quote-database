@@ -17,7 +17,6 @@ app.controller("EditCtrl", function ($location, $routeParams, $scope, MovieQuote
     $scope.editMovieQuoteInFirebase = () => {
         let updateMovieQuote = MovieQuoteService.createMovieQuoteObject($scope.movieQuote);
         MovieQuoteService.editMovieQuote($scope.movieQuote, $scope.movieQuote.id).then(() => {
-            console.log($scope.movieQuote);
             $location.path(`/search`);
         }).catch((error) => {
             console.log("error in updateMovieQuoteInFirebase", error);

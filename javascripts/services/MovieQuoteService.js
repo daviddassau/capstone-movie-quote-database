@@ -46,9 +46,7 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
                         savedMovieQuote.push(fbSavedMovieQuotes[key]);
                     }
                 });
-                console.log("savedMovieQuote", savedMovieQuote);
                 resolve(savedMovieQuote);
-                
             }).catch((error) => {
                 reject(error);
             });
@@ -75,7 +73,6 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
     };
 
     const editMovieQuote = (quote, movieQuote) => {
-        console.log("movieQuote", movieQuote);
         return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieQuote}.json`, JSON.stringify(quote));
     };
 
