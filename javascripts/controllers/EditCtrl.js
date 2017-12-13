@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("EditCtrl", function ($routeParams, $scope, MovieQuoteService){
+app.controller("EditCtrl", function ($location, $routeParams, $scope, MovieQuoteService){
 
     $scope.movieQuote = {};
 
@@ -12,22 +12,16 @@ app.controller("EditCtrl", function ($routeParams, $scope, MovieQuoteService){
         });
     };
 
-    // const getContact = () => {
-    //     ContactService.getSingleContact($routeParams.id).then((results) => {
-    //         $scope.contact = results.data;
-    //     }).catch((error) => {
-    //         console.log("error in getContact", error);
-    //     });
-    // };
-
     getMovieQuoteToEdit();
 
-    // $scope.updateContactInFirebase = () => {
-    //     ContactService.updateContact($scope.contact, $routeParams.id).then(() => {
-    //         $location.path("/contacts/view");
-    //     }).catch((error) => {
-    //         console.log("error in updateContactInFirebase", error);
-    //     });
-    // };
+    $scope.editMovieQuoteInFirebase = () => {
+        let updateMovieQuote = MovieQuoteService.createMovieQuoteObject($scope.movieQuote);
+        MovieQuoteService.editMovieQuote($scope.movieQuote, $scope.movieQuote.id).then(() => {
+            console.log($scope.movieQuote);
+            $location.path(`/search`);
+        }).catch((error) => {
+            console.log("error in updateMovieQuoteInFirebase", error);
+        });
+    };
 
 });

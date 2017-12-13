@@ -74,8 +74,9 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         });
     };
 
-    const updateMovieQuote = (quote, movieId) => {
-        return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieId}.json`, JSON.stringify(quote));
+    const editMovieQuote = (quote, movieQuote) => {
+        console.log("movieQuote", movieQuote);
+        return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieQuote}.json`, JSON.stringify(quote));
     };
 
     const createMovieQuoteObject = (movieQuote) => {
@@ -109,6 +110,6 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
 
     };
 
-    return {getMovieQuoteFromDB, searchMovieQuotes, updateMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes, getSingleMovieQuoteToEdit};
+    return {getMovieQuoteFromDB, searchMovieQuotes, editMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes, getSingleMovieQuoteToEdit};
 
 });
