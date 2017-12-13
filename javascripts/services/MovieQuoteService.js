@@ -92,8 +92,21 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`, JSON.stringify(movieQuote));
     };
 
-    const getSingleMovieQuoteToEdit = (movieQuote) => {
-        return $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieQuote}.json`);
+    const getSingleMovieQuoteToEdit = (movieId) => {
+        let singleMovieQuote = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json?orderBy="movieId"&equalTo="${movieId}"`).then((result) => {
+                let fbMovieQuote = result.data;
+                Object.keys(fbMovieQuote).forEach((key) => {
+                    fbMovieQuote[key].id = key;
+                    singleMovieQuote.push(fbMovieQuote[key]);
+                });
+                resolve(singleMovieQuote);
+            }).catch((error) => {
+
+            });
+        });
+
     };
 
     return {getMovieQuoteFromDB, searchMovieQuotes, updateMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes, getSingleMovieQuoteToEdit};

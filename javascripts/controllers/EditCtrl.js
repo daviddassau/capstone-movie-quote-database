@@ -6,8 +6,7 @@ app.controller("EditCtrl", function ($routeParams, $scope, MovieQuoteService){
 
     const getMovieQuoteToEdit = () => {
         MovieQuoteService.getSingleMovieQuoteToEdit($routeParams.id).then((result) => {
-            console.log("result", $scope.movieQuote = result.data);
-            // $scope.movieQuote = result.data;
+            $scope.movieQuote = result[0];
         }).catch((error) => {
             console.log("error in getMovieQuoteToEdit", error);
         });
