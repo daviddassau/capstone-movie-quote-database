@@ -84,5 +84,10 @@ app.config(function ($routeProvider) {
             controller: 'AddQuoteCtrl',
             resolve: { isAuth }
         })
+        .when("/edit", {
+            templateUrl: 'partials/edit.html',
+            controller: 'EditCtrl',
+            resolve: { isAuth }
+        })
         .otherwise('/auth');
 });

@@ -16,7 +16,6 @@ app.controller("SubmitCtrl", function ($location, $scope, tmdbService, MovieServ
 
     $scope.addQuote = (movie) => {
         MovieService.getMovieByMovieDbIdFromDB(movie.id).then((result) => {
-            console.log("result", result);
             if (result.length > 0) {
                 $location.path(`/addQuote`);
             }
