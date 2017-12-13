@@ -93,7 +93,7 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
     };
 
     const getSingleMovieQuoteToEdit = (movieQuote) => {
-        return $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`, JSON.stringify(movieQuote));
+        return $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieQuote}.json`);
     };
 
     return {getMovieQuoteFromDB, searchMovieQuotes, updateMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes, getSingleMovieQuoteToEdit};

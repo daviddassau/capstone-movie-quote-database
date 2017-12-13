@@ -3,10 +3,10 @@
 
     <form name="editMovieQuoteForm" ng-submit="submitForm()" class="col-xs-4 col-xs-offset-4">
         <div class="form-group">
-            <input type="text" class="form-control" id="editMovieQuote" placeholder="" ng-required="true" ng-model="movie.quote">
+            <input type="text" class="form-control" id="editMovieQuote" ng-required="true" ng-model="movie.quote">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="editCharacter" placeholder="" ng-required="true" ng-model="movie.character">
+            <input type="text" class="form-control" id="editCharacter" ng-required="true" ng-model="movie.character">
         </div>
         <button type="submit" class="btn btn-default" ng-disabled="editMovieQuoteForm.$invalid" ng-click="editMovieQuote(movie)">Submit</button>
     </form>
