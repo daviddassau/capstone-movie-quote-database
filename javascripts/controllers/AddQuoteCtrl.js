@@ -19,7 +19,6 @@ app.controller("AddQuoteCtrl", function ($location, $scope, $routeParams, AuthSe
             newMovieQuote.character = movie.character;
             newMovieQuote.isFavorited = false;
             newMovieQuote.movieId = MovieService.getAddedMovie().id;
-            console.log("MovieService Call", MovieService.getAddedMovie());
             newMovieQuote.quote = movie.quote;
             newMovieQuote.uid = AuthService.getCurrentUid();
 

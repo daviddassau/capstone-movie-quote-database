@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("SearchCtrl", function ($scope, MovieQuoteService, MovieService) {
+app.controller("SearchCtrl", function ($location, $scope, MovieQuoteService, MovieService) {
 
     $scope.movies = [];
     $scope.movieIds = [];
@@ -23,7 +23,7 @@ app.controller("SearchCtrl", function ($scope, MovieQuoteService, MovieService) 
             MovieService.getMovieFromDB(movie.movieId).then((results) => {
                 if (results.length > 0 && $.inArray($scope.movieIds, movie.movieId) == -1){
                     $scope.movieIds.push(movie.movieId);
-
+                    
                     let aMovie = { quote: movie.quote, character: movie.character, title: results[0].title,
                         poster_path: results[0].poster_path, releaseDate: results[0].releaseDate };
 
@@ -33,6 +33,10 @@ app.controller("SearchCtrl", function ($scope, MovieQuoteService, MovieService) 
                 console.log("error in getMovie", error);
             });
         });
+    };
+
+    $scope.editMovieQuote = () => {
+        $location.path(`/edit`);
     };
 
 });
