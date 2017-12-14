@@ -23,11 +23,15 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         let movieQuote = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`).then((results) => {
+                // old code
                 $.each(results.data, function(idx, mvieQte){
                     movieQuote.push(mvieQte);
                 });
-                // Object.keys().forEach((key) => {
-
+                // new code
+                // let fbAllMovieQuotes = results.data;
+                // Object.keys(fbAllMovieQuotes).forEach((key) => {
+                //     fbAllMovieQuotes[key].id = key;
+                //     movieQuote.push(fbAllMovieQuotes[key]);
                 // });
                 resolve(movieQuote);
             }).catch((error) => {
@@ -62,9 +66,17 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`).then((results) => {
+                // old code
                 let fbQueriedMovieQuotes = results;
                 $.each(results.data, function (idx, movieQuote) { 
                     if (movieQuote.quote.includes(query)) {
+                        queriedMovieQuote.push(movieQuote);
+                    }
+                });
+                // new code
+                let fbQueriedMovieQuotes = results;
+                Object.keys(fbQueriedMovieQuotes).forEach((key) => {
+                    if (movieQuote.quote.includes(query)){
                         queriedMovieQuote.push(movieQuote);
                     }
                 });
