@@ -26,6 +26,9 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
                 $.each(results.data, function(idx, mvieQte){
                     movieQuote.push(mvieQte);
                 });
+                // Object.keys().forEach((key) => {
+
+                // });
                 resolve(movieQuote);
             }).catch((error) => {
                 reject(error);
@@ -84,6 +87,11 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
             "movieId": movieQuote.movieId,
             "isFavorited": true
         };
+    };
+
+    // Promise for saving a movie quote
+    const saveMovieQuote = () => {
+
     };
 
     const addNewMovieQuote = (movieQuote) => {

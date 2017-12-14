@@ -275,5 +275,10 @@
             "poster_path": "mBLSuXTAJExUFdqYFgZro7Y9ZDG.jpg",
             "movieDatabaseId": 9552
         }
+    },
+    "favoritedQuotes": {
+        "favoritedQuote": {
+            "isFavorited": false
+        }
     }
 }
