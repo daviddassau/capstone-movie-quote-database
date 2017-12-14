@@ -15,21 +15,27 @@ app.controller("SearchCtrl", function ($location, $scope, MovieQuoteService, Mov
         }
     };
 
-    const getMovies = (movies) => {
-        $scope.movieIds = [];
+    const movieCreator = (quote, movie) => {
+        return {
+            quote: quote.quote,
+            character: quote.character,
+            movieId: quote.movieId,
+            title: movie.title,
+            poster_path: movie.poster_path,
+            releaseDate: movie.releaseDate
+        };
+    };
+
+    const getMovies = (quotes) => {
         $scope.movies = [];
 
-        $.each(movies, function (idx, movieQuote){
-            MovieService.getMovieFromDB(movieQuote.movieId).then((results) => {
-                if (results.length > 0 && $.inArray($scope.movieIds, movieQuote.movieId) == -1){
-                    $scope.movieIds.push(movieQuote.movieId);
-                    
-                    let aMovie = { quote: movieQuote.quote, character: movieQuote.character, movieId: movieQuote.movieId, title: results[0].title,
-                        poster_path: results[0].poster_path, releaseDate: results[0].releaseDate };
-
-                    $scope.movies.push(aMovie);
+        quotes.forEach((quote) => {
+            MovieService.getMovieFromDB(quote.movieId).then((results) => {
+                if (results.length > 0) {
+                    const completeQuote = movieCreator(quote, results[0]);
+                    $scope.movies.push(completeQuote);
                 }
-            }).catch((error) => {
+            }).catch ((error) => {
                 console.log("error in getMovie", error);
             });
         });
