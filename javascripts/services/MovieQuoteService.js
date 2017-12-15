@@ -38,7 +38,6 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
     // Try it out
     const getMovieQuoteForSaved = (uid) => {
         let savedMovieQuote = [];
-        console.log("uid", uid);
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json?orderBy="uid"&equalTo="${uid}"`).then((results) => {
                 let fbSavedMovieQuotes = results.data;
