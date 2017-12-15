@@ -62,7 +62,7 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
             $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`).then((results) => {
                 let fbQueriedMovieQuotes = results.data;
                 Object.keys(fbQueriedMovieQuotes).forEach((key) => {
-                    if (fbQueriedMovieQuotes[key].quote.includes(query)){
+                    if (fbQueriedMovieQuotes[key].quote.toLowerCase().includes(query.toLowerCase())){
                         queriedMovieQuote.push(fbQueriedMovieQuotes[key]);
                     }
                 });
