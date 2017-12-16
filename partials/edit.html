@@ -3,9 +3,11 @@
 
     <form name="editMovieQuoteForm" ng-submit="editMovieQuoteInFirebase(quote)" class="col-xs-4 col-xs-offset-4">
         <div class="form-group">
+            <label for="editMovieQuote">Movie Quote</label>
             <input type="text" class="form-control" id="editMovieQuote" ng-required="true" ng-model="movieQuote.quote">
         </div>
         <div class="form-group">
+            <label for="editCharacter">Movie Character</label>
             <input type="text" class="form-control" id="editCharacter" ng-required="true" ng-model="movieQuote.character">
         </div>
         <button type="submit" class="btn btn-default" ng-disabled="editMovieQuoteForm.$invalid" ng-click="editMovieQuote()">Submit</button>
