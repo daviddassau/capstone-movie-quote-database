@@ -23,12 +23,11 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         let movieQuote = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`).then((results) => {
-                $.each(results.data, function(idx, mvieQte){
-                    movieQuote.push(mvieQte);
+                let fbAllMovieQuotes = results.data;
+                Object.keys(fbAllMovieQuotes).forEach((key) => {
+                    fbAllMovieQuotes[key].id = key;
+                    movieQuote.push(fbAllMovieQuotes[key]);
                 });
-                // Object.keys().forEach((key) => {
-
-                // });
                 resolve(movieQuote);
             }).catch((error) => {
                 reject(error);
@@ -39,7 +38,6 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
     // Try it out
     const getMovieQuoteForSaved = (uid) => {
         let savedMovieQuote = [];
-        console.log("uid", uid);
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json?orderBy="uid"&equalTo="${uid}"`).then((results) => {
                 let fbSavedMovieQuotes = results.data;
@@ -62,10 +60,10 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`).then((results) => {
-                let fbQueriedMovieQuotes = results;
-                $.each(results.data, function (idx, movieQuote) { 
-                    if (movieQuote.quote.includes(query)) {
-                        queriedMovieQuote.push(movieQuote);
+                let fbQueriedMovieQuotes = results.data;
+                Object.keys(fbQueriedMovieQuotes).forEach((key) => {
+                    if (fbQueriedMovieQuotes[key].quote.toLowerCase().includes(query.toLowerCase())){
+                        queriedMovieQuote.push(fbQueriedMovieQuotes[key]);
                     }
                 });
                 resolve(queriedMovieQuote);
