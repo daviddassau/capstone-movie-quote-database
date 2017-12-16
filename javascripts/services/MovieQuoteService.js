@@ -35,26 +35,6 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         });
     };
 
-    // Try it out
-    const getMovieQuoteForSaved = (uid) => {
-        let savedMovieQuote = [];
-        return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json?orderBy="uid"&equalTo="${uid}"`).then((results) => {
-                let fbSavedMovieQuotes = results.data;
-                Object.keys(fbSavedMovieQuotes).forEach((key) => {
-                    if (fbSavedMovieQuotes[key].isFavorited) {
-                        fbSavedMovieQuotes[key].id = key;
-                        savedMovieQuote.push(fbSavedMovieQuotes[key]);
-                    }
-                });
-                resolve(savedMovieQuote);
-            }).catch((error) => {
-                reject(error);
-            });
-        });
-    };
-    // end Try it out
-
     const searchMovieQuotes = (query) => {
         let queriedMovieQuote = [];
         
@@ -87,11 +67,6 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         };
     };
 
-    // Promise for saving a movie quote
-    const saveMovieQuote = () => {
-
-    };
-
     const addNewMovieQuote = (movieQuote) => {
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`, JSON.stringify(movieQuote));
     };
@@ -113,6 +88,50 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
 
     };
 
-    return {getMovieQuoteFromDB, searchMovieQuotes, editMovieQuote, createMovieQuoteObject, getMovieQuoteForSaved, addNewMovieQuote, getAllMovieQuotes, getSingleMovieQuoteToEdit};
+    // For Save Movie Quote
+    const getMovieQuoteForSaved = (uid) => {
+        let savedMovieQuote = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/userQuotes.json?orderBy="uid"&equalTo="${uid}"`).then((results) => {
+                let fbSavedMovieQuotes = results.data;
+                Object.keys(fbSavedMovieQuotes).forEach((key) => {
+                    fbSavedMovieQuotes[key].id = key;
+                    savedMovieQuote.push(fbSavedMovieQuotes[key]);
+                });
+                resolve(savedMovieQuote);
+            }).catch((error) => {
+                reject(error);
+            });
+        });
+    };
+    // end Save Movie Quote
+
+    const updateUserMovieQuote = (quote) => {
+        let updatedMovieQuote = createUserMovieQuoteObject(quote);
+        return $http.post(`${FIREBASE_CONFIG.databaseURL}/userQuotes.json`, JSON.stringify(updatedMovieQuote));
+    };
+
+    const createUserMovieQuoteObject = (movieQuote) => {
+        return {
+            "uid": movieQuote.uid,
+            "quoteId": movieQuote.id
+        };
+    };
+
+    const getSingleQuote = (quoteId) => {
+        return $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${quoteId}.json`, JSON.stringify());
+    };
+
+    return {getMovieQuoteFromDB,
+            searchMovieQuotes, 
+            editMovieQuote, 
+            createMovieQuoteObject, 
+            getMovieQuoteForSaved, 
+            addNewMovieQuote, 
+            getAllMovieQuotes, 
+            getSingleMovieQuoteToEdit, 
+            updateUserMovieQuote, 
+            getSingleQuote
+        };
 
 });

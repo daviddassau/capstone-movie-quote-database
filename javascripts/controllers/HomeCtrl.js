@@ -21,19 +21,16 @@ app.controller("HomeCtrl", function ($rootScope, $scope, MovieQuoteService, Movi
         });
     };
 
-
-
     $scope.starChange = (quote) => {
         let updateMovieQuote = {};
 
-        if (!quote.isFavorited) {
-            updateMovieQuote = MovieQuoteService.createMovieQuoteObject(quote);
-        } else {
-            updateMovieQuote = MovieQuoteService.createMovieQuoteObject(quote);
-            updateMovieQuote.isFavorited = false;
-        }
+
+
         
-        MovieQuoteService.updateMovieQuote(updateMovieQuote, quote.id).then((result) => {
+        // updateMovieQuote = MovieQuoteService.createMovieQuoteObject(quote);
+        console.log("starChange", quote);
+        
+        MovieQuoteService.updateUserMovieQuote(quote, quote.id).then((result) => {
             getMovieQuote();
         }).catch((error) => {
             console.log("error in starChange", error);
