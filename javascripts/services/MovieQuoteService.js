@@ -122,6 +122,10 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         return $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${quoteId}.json`, JSON.stringify());
     };
 
+    const getSingleMovie = (movieId) => {
+        return $http.get(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`, JSON.stringify());
+    };
+
     return {getMovieQuoteFromDB,
             searchMovieQuotes, 
             editMovieQuote, 
@@ -131,7 +135,8 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
             getAllMovieQuotes, 
             getSingleMovieQuoteToEdit, 
             updateUserMovieQuote, 
-            getSingleQuote
+            getSingleQuote,
+            getSingleMovie
         };
 
 });

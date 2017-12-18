@@ -1,6 +1,6 @@
 <div class="saved row" id="saved">
     <div>
-        <h1 class="text-center">My Favorite Quotes</h1>
+        <h1 class="text-center">My Saved Quotes</h1>
     </div>
     <div id="movies">
         <div class="row" ng-repeat="movie in userQuote">
@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-8">
                 <h2>{{movie.title}}</h2>
-                <p>{{movie.releaseDate}}</p>
+                <p class="small">Release date: {{movie.releaseDate}}</p>
                 <div class="quote-body">
                     <p>"{{movie.quote}}"</p>
                     <p>- {{movie.character}}</p>

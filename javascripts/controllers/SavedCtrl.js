@@ -11,7 +11,11 @@ app.controller("SavedCtrl", function ($scope, AuthService, MovieQuoteService) {
         MovieQuoteService.getMovieQuoteForSaved(uid).then((results) => {
             results.forEach((result) => {
                 MovieQuoteService.getSingleQuote(result.quoteId).then((quote) => {
-                    $scope.userQuote.push(quote.data);
+                    MovieQuoteService.getSingleMovie(quote.data.movieId).then((movie) => {
+                        movie.data.character = quote.data.character;
+                        movie.data.quote = quote.data.quote;
+                        $scope.userQuote.push(movie.data);
+                    }); 
                 });
             });
         }).catch((error) => {
