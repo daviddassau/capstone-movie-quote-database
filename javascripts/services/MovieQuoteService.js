@@ -118,6 +118,10 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         };
     };
 
+    const deleteUserMovieQuote = (quoteId) => {
+        return $http.delete(`${FIREBASE_CONFIG.databaseURL}/userQuotes/${quoteId}.json`, JSON.stringify());
+    };
+
     const getSingleQuote = (quoteId) => {
         return $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${quoteId}.json`, JSON.stringify());
     };
@@ -136,7 +140,8 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
             getSingleMovieQuoteToEdit, 
             updateUserMovieQuote, 
             getSingleQuote,
-            getSingleMovie
+            getSingleMovie,
+            deleteUserMovieQuote
         };
 
 });

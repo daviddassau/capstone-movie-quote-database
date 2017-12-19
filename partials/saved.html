@@ -1,4 +1,4 @@
-<div class="saved row" id="saved">
+<div class="saved" id="saved">
     <div>
         <h1 class="text-center">My Saved Quotes</h1>
     </div>
@@ -13,6 +13,12 @@
                 <div class="quote-body">
                     <p>"{{movie.quote}}"</p>
                     <p>- {{movie.character}}</p>
+                    <button class="btn btn-default" ng-click="deleteQuote(movie.quoteId)">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                    <!-- <button class="btn btn-default not-favorited" ng-if="movieQuote.isFavorited" ng-click="starChange(movieQuote)">
+                        <i class="fa fa-star"></i>
+                    </button> -->
                 </div>
             </div>
         </div>

@@ -22,10 +22,8 @@ app.controller("HomeCtrl", function ($rootScope, $scope, MovieQuoteService, Movi
     };
 
     $scope.starChange = (quote) => {
-        
-        let updateMovieQuote = {};
 
-        // updateMovieQuote = MovieQuoteService.createMovieQuoteObject(quote);
+        let updateMovieQuote = {};
         
         MovieQuoteService.updateUserMovieQuote(quote, quote.id).then((result) => {
             getMovieQuote();
