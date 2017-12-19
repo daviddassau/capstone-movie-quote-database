@@ -1,18 +1,24 @@
-<div class="saved row" id="saved">
+<div class="saved" id="saved">
     <div>
-        <h1 class="text-center">My Favorite Quotes</h1>
+        <h1 class="text-center">My Saved Quotes</h1>
     </div>
     <div id="movies">
-        <div class="row" ng-repeat="movie in movies">
+        <div class="row" ng-repeat="movie in userQuote">
             <div class="col-md-4">
                 <img class="poster_path" ng-src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" width="250px" alt="">
             </div>
             <div class="col-md-8">
                 <h2>{{movie.title}}</h2>
-                <p>{{movie.releaseDate}}</p>
+                <p class="small">Release date: {{movie.releaseDate}}</p>
                 <div class="quote-body">
                     <p>"{{movie.quote}}"</p>
                     <p>- {{movie.character}}</p>
+                    <button class="btn btn-default" ng-click="deleteQuote(movie.quoteId)">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                    <!-- <button class="btn btn-default not-favorited" ng-if="movieQuote.isFavorited" ng-click="starChange(movieQuote)">
+                        <i class="fa fa-star"></i>
+                    </button> -->
                 </div>
             </div>
         </div>

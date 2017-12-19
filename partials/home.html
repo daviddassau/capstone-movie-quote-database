@@ -1,4 +1,4 @@
-<div class="home row" id="home">
+<div class="home" id="home">
     <div>
         <h1 class="text-center">Quote of The Day</h1>
     </div>
@@ -9,14 +9,17 @@
             </div>
             <div class="col-md-6">
                 <h2>{{movie.title}}</h2>
-                <p class="small">{{movie.releaseDate}}</p>
+                <p class="small">Release date: {{movie.releaseDate}}</p>
                 <div class="quote-body">
                     <p>"{{movieQuote.quote}}"</p>
                     <p>- {{movieQuote.character}}</p>
-                    <!-- <button class="btn btn-default not-favorited" ng-if="!movieQuote.isFavorited" ng-click="starChange(movieQuote)">
+                    <button class="btn btn-default not-favorited" ng-click="starChange(movieQuote)">
                         <i class="fa fa-star-o"></i>
                     </button>
-                    <button class="btn btn-default not-favorited" ng-if="movieQuote.isFavorited" ng-click="starChange(movieQuote)">
+                    <!-- <button class="btn btn-default favorite" ng-click="changeFavorite(favorite)">
+                        <i ng-class="{'fa fa-star fa-3x': favorite.favorite, 'fa fa-star-o fa-3x': !favorite.favorite}"></i>
+                    </button> -->
+                    <!-- <button class="btn btn-default not-favorited" ng-if="movieQuote.isFavorited" ng-click="starChange(movieQuote)">
                         <i class="fa fa-star"></i>
                     </button> -->
                 </div>
