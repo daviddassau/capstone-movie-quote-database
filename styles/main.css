@@ -5,5 +5,53 @@
     float: none;
     display: inline-block; }
 
+.search h1, .search h2, .search h3, .search h4 {
+  color: white; }
+
+.search p {
+  color: white; }
+
+.search-quote-row {
+  padding-top: 20px; }
+
+.submit h1, .submit h4 {
+  color: white; }
+
+.submit-body {
+  padding-top: 20px; }
+
+.home h1, .home h2, .home h3, .home h4 {
+  color: white; }
+
+.home p {
+  color: white; }
+
+.saved h1, .saved h2, .saved h3, .saved h4 {
+  color: white; }
+
+.saved p {
+  color: white; }
+
+.edit h1, .edit h2, .edit h3, .edit h4 {
+  color: white; }
+
+.edit label {
+  color: white; }
+
+body {
+  background: url(../img/theater-background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 img {
   margin: 0 auto; }
+
+.img-box-shadow {
+  box-shadow: 4px 4px 20px #000000; }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
