@@ -2,8 +2,6 @@
 
 app.controller("SavedCtrl", function ($scope, AuthService, MovieQuoteService) {
 
-    
-
     const getUserQuotesFromFB = () => {
         $scope.userQuote = [];
         let uid = AuthService.getCurrentUid();
