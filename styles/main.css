@@ -11,6 +11,9 @@
 .search p {
   color: white; }
 
+.search .star-btn {
+  margin-top: 10px; }
+
 .search-quote-row {
   padding-top: 20px; }
 
