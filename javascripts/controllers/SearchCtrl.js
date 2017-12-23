@@ -51,4 +51,17 @@ app.controller("SearchCtrl", function ($location, $scope, MovieQuoteService, Mov
         $location.path(`/edit/${movieId}`);
     };
 
+
+
+    $scope.starChange = (quote) => {
+        // console.log("quote", quote);
+
+        MovieQuoteService.updateUserMovieQuoteFromSearchPage(quote, quote.id).then((result) => {
+            getMovies();
+        }).catch((error) => {
+            console.log("error in starChange", error);
+        });
+
+    };
+
 });

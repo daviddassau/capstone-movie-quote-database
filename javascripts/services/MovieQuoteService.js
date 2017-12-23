@@ -2,6 +2,7 @@
 
 app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
 
+    // Get a random movie quote from Firebase
     const getMovieQuoteFromDB = () => {
         let movieQuote = [];
         return $q((resolve, reject) => {
@@ -19,6 +20,7 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         });
     };
 
+    // Get all movie quotes from Firebase
     const getAllMovieQuotes = () => {
         let movieQuote = [];
         return $q((resolve, reject) => {
@@ -35,6 +37,7 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         });
     };
 
+    // This is searching Firebase when a user queries a movie quote
     const searchMovieQuotes = (query) => {
         let queriedMovieQuote = [];
         
@@ -53,10 +56,12 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         });
     };
 
+    // When a user wants to edit a movie quote
     const editMovieQuote = (quote, movieQuote) => {
         return $http.put(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${movieQuote}.json`, JSON.stringify(quote));
     };
 
+    // An object that updates an existing quote in Firebase
     const createMovieQuoteObject = (movieQuote) => {
         return {
             "quote": movieQuote.quote,
@@ -67,10 +72,12 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         };
     };
 
+    // Adds a new movie quote to Firebase
     const addNewMovieQuote = (movieQuote) => {
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/movieQuotes.json`, JSON.stringify(movieQuote));
     };
 
+    // Gets a single movie quote from Firebase that needs to be edited
     const getSingleMovieQuoteToEdit = (movieId) => {
         let singleMovieQuote = [];
         return $q((resolve, reject) => {
@@ -88,7 +95,7 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
 
     };
 
-    // For Save Movie Quote
+    // Gets the user's saved movie quotes from Firebase to display on saved page
     const getMovieQuoteForSaved = (uid) => {
         let savedMovieQuote = [];
         return $q((resolve, reject) => {
@@ -104,13 +111,14 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
             });
         });
     };
-    // end Save Movie Quote
 
+    // From the home page, posts a new saved movie quote to user's collection in Firebase
     const updateUserMovieQuote = (quote) => {
         let updatedMovieQuote = createUserMovieQuoteObject(quote);
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/userQuotes.json`, JSON.stringify(updatedMovieQuote));
     };
 
+    // From the home page, an object that helps post the new saved quote to the user's collection
     const createUserMovieQuoteObject = (movieQuote) => {
         return {
             "uid": movieQuote.uid,
@@ -118,16 +126,34 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
         };
     };
 
+    // Deletes a saved movie quote from the user's collection
     const deleteUserMovieQuote = (quoteId) => {
         return $http.delete(`${FIREBASE_CONFIG.databaseURL}/userQuotes/${quoteId}.json`, JSON.stringify());
     };
 
+    // Gets the info from the movieQuotes collection for the saved page
     const getSingleQuote = (quoteId) => {
         return $http.get(`${FIREBASE_CONFIG.databaseURL}/movieQuotes/${quoteId}.json`, JSON.stringify());
     };
 
+    // Gets the info from the movies collection for the saved page
     const getSingleMovie = (movieId) => {
         return $http.get(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`, JSON.stringify());
+    };
+
+    // From the search page, posts a new saved movie quote to user's collection in Firebase
+    const updateUserMovieQuoteFromSearchPage = (quote) => {
+        console.log("quote from search", quote);
+        let updatedMovieQuoteFromSearchPage = createUserMovieQuoteObjectFromSearchPage(quote);
+        return $http.post(`${FIREBASE_CONFIG.databaseURL}/userQuotes.json`, JSON.stringify(updatedMovieQuoteFromSearchPage));
+    };
+
+    // From the serach page, an object that helps post the new saved quote to the user's collection
+    const createUserMovieQuoteObjectFromSearchPage = (movieQuote) => {
+        return {
+            "uid": movieQuote.uid,
+            "quoteId": movieQuote.id
+        };
     };
 
     return {getMovieQuoteFromDB,
@@ -141,7 +167,9 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
             updateUserMovieQuote, 
             getSingleQuote,
             getSingleMovie,
-            deleteUserMovieQuote
+            deleteUserMovieQuote,
+            updateUserMovieQuoteFromSearchPage,
+            createUserMovieQuoteObjectFromSearchPage
         };
 
 });
