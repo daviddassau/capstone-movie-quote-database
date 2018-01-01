@@ -22,13 +22,15 @@ app.controller("SearchCtrl", function ($location, $scope, MovieQuoteService, Mov
     };
 
     const movieCreator = (quote, movie) => {
+        console.log(quote);
         return {
             quote: quote.quote,
             character: quote.character,
             movieId: quote.movieId,
             title: movie.title,
             poster_path: movie.poster_path,
-            releaseDate: movie.releaseDate
+            releaseDate: movie.releaseDate,
+            quoteId: quote.quoteId
         };
     };
 
@@ -51,17 +53,12 @@ app.controller("SearchCtrl", function ($location, $scope, MovieQuoteService, Mov
         $location.path(`/edit/${movieId}`);
     };
 
-
-
-    $scope.starChange = (quote) => {
-        // console.log("quote", quote);
-
+    $scope.saveMovieQuote = (quote) => {
         MovieQuoteService.updateUserMovieQuoteFromSearchPage(quote, quote.id).then((result) => {
-            getMovies();
+            
         }).catch((error) => {
-            console.log("error in starChange", error);
+            console.log("error in saveMovieQuote", error);
         });
-
     };
 
 });

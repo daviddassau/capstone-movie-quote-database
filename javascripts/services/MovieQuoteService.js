@@ -1,6 +1,6 @@
 "use strict";
 
-app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
+app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG, AuthService){
 
     // Get a random movie quote from Firebase
     const getMovieQuoteFromDB = () => {
@@ -46,6 +46,7 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
                 let fbQueriedMovieQuotes = results.data;
                 Object.keys(fbQueriedMovieQuotes).forEach((key) => {
                     if (fbQueriedMovieQuotes[key].quote.toLowerCase().includes(query.toLowerCase())){
+                        fbQueriedMovieQuotes[key].quoteId = key;
                         queriedMovieQuote.push(fbQueriedMovieQuotes[key]);
                     }
                 });
@@ -143,7 +144,6 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
 
     // From the search page, posts a new saved movie quote to user's collection in Firebase
     const updateUserMovieQuoteFromSearchPage = (quote) => {
-        console.log("quote from search", quote);
         let updatedMovieQuoteFromSearchPage = createUserMovieQuoteObjectFromSearchPage(quote);
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/userQuotes.json`, JSON.stringify(updatedMovieQuoteFromSearchPage));
     };
@@ -151,8 +151,8 @@ app.service("MovieQuoteService", function($http, $q, FIREBASE_CONFIG){
     // From the serach page, an object that helps post the new saved quote to the user's collection
     const createUserMovieQuoteObjectFromSearchPage = (movieQuote) => {
         return {
-            "uid": movieQuote.uid,
-            "quoteId": movieQuote.id
+            "uid": AuthService.getCurrentUid(),
+            "quoteId": movieQuote.quoteId
         };
     };
 
