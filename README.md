@@ -11,6 +11,7 @@ YGNABQ is, simply, a movie quote database. The user is able to quickly create an
 Speaking of, here are some of the main features of the app:
 - For each movie quote, you can see metadata such as the quote itself, the character in the film who said it, the film's release date, and the option to save the quote to your "favorites" list.
 - On the homepage, you can view the random movie quote of the day.
+- 
 
 
 
@@ -20,7 +21,3 @@ Speaking of, here are some of the main features of the app:
 ## Want to try it out?
 
 ### Dependencies
-- A PC, or a Mac with a PC virtual machine.
-- Visual Studio
-- SQL Server Management Studio
-- The DB table script. You can find this in the folder `SQL Scripts > asdf`.
